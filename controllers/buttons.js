@@ -1,7 +1,7 @@
 import { getJsonResponse } from "../openai/openai.js";
 
 export const generateButtons = async (body) => {
-  console.log(body.address);
+  console.log(body.name);
   try {
     const prompt = `
 A user named ${body.name} has the following medical conditions: "${

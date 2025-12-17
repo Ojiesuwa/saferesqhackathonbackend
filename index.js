@@ -96,7 +96,6 @@ app.post("/api/emergency", async (req, res) => {
 app.post("/api/onboarding", async (req, res) => {
   try {
     const info = req.body;
-
     const result = await generateButtons(info);
     console.log(result);
 
