@@ -5,6 +5,7 @@ import { fileURLToPath } from "url";
 import { initializeCall, makePhoneCall } from "./controllers/twilio.js";
 import { generateMessageFromEmergency } from "./controllers/message.js";
 import { generateButtons } from "./controllers/buttons.js";
+import cors from "cors";
 
 dotenv.config();
 
@@ -19,6 +20,7 @@ const __dirname = path.dirname(__filename);
 const callControl = initializeCall();
 
 app.use("/public", express.static(path.join(__dirname, "public")));
+app.use(cors());
 
 // ===============================
 // 1. Trigger Call
